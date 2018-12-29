@@ -1,5 +1,8 @@
 import numpy as np
 
+import warnings
+warnings.filterwarnings('error')
+
 
 def replace_nan_to_means(X):
     Y = X.copy()
