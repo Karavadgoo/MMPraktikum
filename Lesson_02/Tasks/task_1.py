@@ -7,12 +7,6 @@ def get_nonzero_diag_product(matrix):
     return nonzero_diagonal.prod() if nonzero_diagonal.size else None
 
 
-# Было:
-# def get_nonzero_diag_product(matrix):
-    # nonzero_diagonal = matrix.diagonal()[matrix.diagonal() != 0]
-    # return nonzero_diagonal.prod() if nonzero_diagonal.size else None
-
-
 # matrix = np.array([[1, 0, 1], [2, 0, 2], [3, 0, 3], [4, 4, 4]])
 # print(matrix)
 # print(np.diag(matrix))
