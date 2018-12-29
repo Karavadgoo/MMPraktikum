@@ -2,8 +2,15 @@ import numpy as np
 
 
 def get_nonzero_diag_product(matrix):
-    nonzero_diagonal = matrix.diagonal()[matrix.diagonal() != 0]
+    array_diagonal = matrix.diagonal()
+    nonzero_diagonal = array_diagonal[array_diagonal != 0]
     return nonzero_diagonal.prod() if nonzero_diagonal.size else None
+
+
+# Было:
+# def get_nonzero_diag_product(matrix):
+    # nonzero_diagonal = matrix.diagonal()[matrix.diagonal() != 0]
+    # return nonzero_diagonal.prod() if nonzero_diagonal.size else None
 
 
 # matrix = np.array([[1, 0, 1], [2, 0, 2], [3, 0, 3], [4, 4, 4]])
