@@ -1,20 +1,13 @@
 import numpy as np
 
-import warnings
-warnings.filterwarnings('error')
-
-
-def f(Z):
-    try:
-        Z[np.isnan(Z)] = np.nanmean(Z)
-    except Exception:
-        Z = 0
-    return Z
-
 
 def replace_nan_to_means(X):
     Y = X.copy()
-    return np.apply_along_axis(f, 0, Y)
+    isnan_array = np.isnan(X)
+    nanmean_array = np.nanmean(X, axis=0)
+    nanmean_array[np.isnan(nanmean_array)] = 0
+    Y[isnan_array] = (nanmean_array + np.zeros(X.shape))[isnan_array]
+    return Y
 
 
 # X = np.array([[1, 0, 1], [np.nan, 2, 5], [2, 0, np.nan], [3, 1, 3]])
